@@ -1,16 +1,27 @@
 <!DOCTYPE html>
-
 <html>
-
 <head>
-	<link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <title>Window Width and Height</title>
 </head>
-
 <body>
-	<!-- the entire body must be written by student -->
-    <script type="text/javascript" src="./script.js">
-</script>
+  <p>Window Width: <span id="width"></span></p>
+  <p>Window Height: <span id="height"></span></p>
 
+  <script>
+    const widthSpan = document.getElementById('width');
+    const heightSpan = document.getElementById('height');
+
+    function updateWindowSize() {
+      widthSpan.textContent = window.innerWidth;
+      heightSpan.textContent = window.innerHeight;
+    }
+
+    // Initial update
+    updateWindowSize();
+
+    // Add event listener for window resize
+    window.addEventListener('resize', updateWindowSize);
+  </script>
 </body>
-
 </html>
